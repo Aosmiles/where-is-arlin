@@ -1,0 +1,14 @@
+---
+import LinkCard from "./LinkCard.astro";
+const links = await Astro.glob('../links/*.md')
+---
+
+<ul>
+  {links.map((link) => (
+    <LinkCard 
+    href={link.frontmatter.href} 
+    title={link.frontmatter.title}
+    body={link.frontmatter.body}
+    />
+  ))}
+</ul>
